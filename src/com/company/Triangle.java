@@ -6,7 +6,7 @@ public class Triangle {
     public static void main(String[] args) {
         int rows = 7, cols = 2 * rows - 1;
         int arr[][] = new int[rows][cols];
-        for(int i = 0; i < rows; i++){
+        for(int i = 0; i < rows; i++)
             for (int j = 0; j < cols; j++){
                 if ( i == 0)
                     arr[0][cols/2] = 1;
@@ -15,9 +15,20 @@ public class Triangle {
                 else arr[i][j] = arr[i-1][j-1] + arr[i-1][j+1];
             }
             
+
+        //for(int i = 0; i < rows; i++)
+          //  System.out.println(Arrays.toString(arr[i]));
+        for(int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                String s = Integer.toString(arr[i][j]);
+                String pad = String.format("%2s", s);
+                if (arr[i][j] != 0)
+                    System.out.print(pad);
+                else System.out.print("  ");
+
+            }
+            System.out.println();
         }
-        for(int i = 0; i < rows; i++)
-            System.out.println(Arrays.toString(arr[i]));
     }
 
 }
